@@ -1,0 +1,24 @@
+version: '3.3'
+
+services:
+  grafana:
+    container_name: grafana
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      GF_LOG_LEVEL: debug
+    entrypoint: ["/initial_data.sh"]
+    volumes:
+      - ./initial_data.sh:/initial_data.sh
+      - ./grafana.db:/var/lib/grafana/grafana.db
+      - ./plugins:/var/lib/grafana/plugins
+  cassandra:
+    container_name: cassandra
+    image: cassandra:latest
+    ports:
+      - "9042:9042"
+    volumes:
+      - "D:/hamed/cassandra-storage:/var/lib/cassandra"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=data-lake

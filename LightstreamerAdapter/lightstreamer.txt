@@ -1,0 +1,1 @@
+docker run --name ls-server -v D:/Lightstreamer/conf/lightstreamer_conf.xml:/lightstreamer/conf/lightstreamer_conf.xml -d -p 80:8080 lightstreamer

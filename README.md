@@ -1,0 +1,1 @@
+docker composes for my local development (tuned resoueces for lower ram/cpu usage)

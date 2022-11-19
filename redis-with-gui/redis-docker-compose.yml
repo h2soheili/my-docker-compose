@@ -1,0 +1,25 @@
+version: '3'
+name: redis-stack
+services:
+  redis:
+    image: redis:6.0
+    hostname: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    hostname: redis-commander
+    container_name: redis-commander
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    depends_on:
+      - redis
+    ports:
+      - '5081:8081'
+    restart: always
+  
+volumes:
+  redis-data:
+    driver: local

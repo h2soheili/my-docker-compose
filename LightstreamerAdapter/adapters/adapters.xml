@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<adapters_conf id="LS_PROXY_PYTHON_1">
+   <metadata_provider>
+      <adapter_class>ROBUST_PROXY_FOR_REMOTE_ADAPTER</adapter_class>
+      <classloader>log-enabled</classloader>
+      <param name="request_reply_port">8003</param>
+      <param name="timeout">36000000</param>
+   </metadata_provider>
+   <data_provider>
+      <adapter_class>ROBUST_PROXY_FOR_REMOTE_ADAPTER</adapter_class>
+      <classloader>log-enabled</classloader>
+      <param name="request_reply_port">8001</param>
+      <param name="notify_port">8002</param>
+      <param name="timeout">36000000</param>
+   </data_provider>
+</adapters_conf>
